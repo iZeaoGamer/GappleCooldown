@@ -37,7 +37,7 @@ class Main extends PluginBase implements \pocketmine\event\Listener{
         $player = $e->getPlayer();
         if($e->getItem()->getId() == 322){
           if(isset($this->p[strtolower($player->getName())])){
-            $player->sendMessage(C::ITALIC. C::RED. "You're able to consume another Golden Apple in ". $this->cooldown->get(strtolower($player->getName())). " seconds.");
+            $player->sendMessage(C::ITALIC. C::RED. "§r§bYou're able to consume another Golden Apple in §3". $this->cooldown->get(strtolower($player->getName())). " §bseconds.");
             $e->setCancelled();
           }else{
             $this->addCooldown($player);
@@ -45,7 +45,7 @@ class Main extends PluginBase implements \pocketmine\event\Listener{
         }
         if($e->getItem()->getId() == 466){
           if(isset($this->p[strtolower($player->getName())])){
-            $player->sendMessage(C::ITALIC. C::RED. "You're able to consume another Golden Apple in ". $this->cooldown->get(strtolower($player->getName())). " seconds.");
+            $player->sendMessage(C::ITALIC. C::RED. "§r§bYou're able to consume another Enchanted Golden Apple in §3". $this->cooldown->get(strtolower($player->getName())). " §bseconds.");
             $e->setCancelled();
           }else{
             $this->addEnchantedCooldown($player);
