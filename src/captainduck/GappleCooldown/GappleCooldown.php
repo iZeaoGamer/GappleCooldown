@@ -19,9 +19,9 @@ class GappleCooldown extends PluginBase implements \pocketmine\event\Listener{
         $this->getLogger()->info("GappleCooldown by CaptainDuck enabled!");
         $this->getScheduler()->scheduleRepeatingTask(new CooldownTask($this, 25), 25);
         $this->config = new Config($this->getDataFolder(). "config.yml", Config::YAML, array(
-            "cooldown-seconds" => 10,
-            "enchanted-cooldown-seconds" => 20,
-            "has-cooldown-message" => "You will be able to consume another golden apple in {TIME} minutes!"
+            "cooldown-seconds" => 30,
+            "enchanted-cooldown-seconds" => 60,
+            "has-cooldown-message" => "§6You will be able to consume another golden apple in §e{TIME} §6minutes!"
         ));
         $this->cooldown = new Config($this->getDataFolder(). "cooldowns.yml", Config::YAML);
         @mkdir($this->getDataFolder());
